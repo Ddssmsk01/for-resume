@@ -68,17 +68,6 @@ zzz = GridSearchCV(cv=5, error_score='raise',
        param_grid={'min_child_weight': [1, 3, 5], 'max_depth': [3, 5, 7]},
        pre_dispatch='2*n_jobs', refit=True, scoring='accuracy', verbose=0)
 zzz.fit(X_train, y_train)
-GridSearchCV(cv=5, error_score='raise',
-       estimator=XGBClassifier(base_score=0.5, booster='gbtree', colsample_bylevel=1,
-       colsample_bytree=0.8, gamma=0, learning_rate=0.1, max_delta_step=0,
-       max_depth=3, min_child_weight=1, missing=None, n_estimators=100,
-       n_jobs=1, nthread=-1, objective='binary:logistic', random_state=0,
-       reg_alpha=0, reg_lambda=1, scale_pos_weight=1, seed=1234,
-       silent=True, subsample=0.8),
-       fit_params={}, iid=True, n_jobs=-1,
-       param_grid={'min_child_weight': [1, 3, 5], 'max_depth': [3, 5, 7]},
-       pre_dispatch='2*n_jobs', refit=True, scoring='accuracy', verbose=0)
-
 
 sorted(zzz.cv_results_.keys())
 print(zzz.grid_scores_)
